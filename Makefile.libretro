@@ -7,7 +7,7 @@ LAGFIX=1
 
 CORE_DIR := .
 BUILD_DIR = build
-OBJOUT = -o
+OBJOUT = -o 
 
 ifeq ($(platform),android_arm64-v8a)
 include $(BUILD_DIR)/Makefile.android_arm64-v8a
@@ -43,6 +43,8 @@ else ifeq ($(platform),windows_msvc2003_x86)
 include $(BUILD_DIR)/Makefile.windows_msvc2003_x86
 else ifeq ($(platform),windows_msvc2005_x86)
 include $(BUILD_DIR)/Makefile.windows_msvc2005_x86
+else ifeq ($(platform),windows_msvc2008_x86)
+include $(BUILD_DIR)/Makefile.windows_msvc2008_x86
 else ifeq ($(platform),windows_msvc2010_x86)
 include $(BUILD_DIR)/Makefile.windows_msvc2010_x86
 else ifeq ($(platform),windows_msvc2010_x64)
@@ -513,8 +515,8 @@ else
 	LD = link.exe
 endif
 else
-	OBJOUT   = -o
-	LINKOUT  = -o
+	OBJOUT   = -o 
+	LINKOUT  = -o 
 	LD = $(CC)
 endif
 
